@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\D\\HIEPTV\\CyberAppgoldenR3_VinFast_MinhThanh\\CyberAppgoldenR3_VinFast_MinhThanh\\Sm\\Cyber.InputCustom\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{DC073ACE-808D-48A4-BE7B-017333D46BF2}|Cyber.InputCustom\\Cyber.InputCustom.vbproj|e:\\d\\hieptv\\cyberappgoldenr3_vinfast_minhthanh\\cyberappgoldenr3_vinfast_minhthanh\\sm\\cyber.inputcustom\\cyber.inputcustom\\ro\\hdc.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{DC073ACE-808D-48A4-BE7B-017333D46BF2}|Cyber.InputCustom\\Cyber.InputCustom.vbproj|solutionrelative:cyber.inputcustom\\ro\\hdc.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "HDC.vb",
+              "DocumentMoniker": "E:\\D\\HIEPTV\\CyberAppgoldenR3_VinFast_MinhThanh\\CyberAppgoldenR3_VinFast_MinhThanh\\Sm\\Cyber.InputCustom\\Cyber.InputCustom\\RO\\HDC.vb",
+              "RelativeDocumentMoniker": "Cyber.InputCustom\\RO\\HDC.vb",
+              "ToolTip": "E:\\D\\HIEPTV\\CyberAppgoldenR3_VinFast_MinhThanh\\CyberAppgoldenR3_VinFast_MinhThanh\\Sm\\Cyber.InputCustom\\Cyber.InputCustom\\RO\\HDC.vb",
+              "RelativeToolTip": "Cyber.InputCustom\\RO\\HDC.vb",
+              "ViewState": "AQIAAMcJAAAAAAAAAAAowNIJAAAcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-11-08T07:39:21.247Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

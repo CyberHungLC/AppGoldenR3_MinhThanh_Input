@@ -1,0 +1,4 @@
+﻿
+Class Voucher
+
+End Class
