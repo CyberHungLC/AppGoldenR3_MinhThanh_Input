@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class HDK
     Inherits Cyber.From.Frmvoucher
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         If disposing AndAlso components IsNot Nothing Then
             components.Dispose()
@@ -17,7 +17,7 @@ Partial Class HDK
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.TxtMa_Quyen = New System.Windows.Forms.TextBox()
@@ -256,6 +256,8 @@ Partial Class HDK
         Me.TxtSo_May2 = New System.Windows.Forms.TextBox()
         Me.Label40 = New System.Windows.Forms.Label()
         Me.CmdImport_Mau = New System.Windows.Forms.Button()
+        Me.ChkIs_Thieu_HoSo = New System.Windows.Forms.CheckBox()
+        Me.TxtGhi_Chu_HoSo = New System.Windows.Forms.TextBox()
         CType(Me.PopupMenuMaster, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DetailVt, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DetailGRVVt, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -3822,7 +3824,7 @@ Partial Class HDK
         Me.TxtNgay_Gx.ShowDayBeforeMonth = False
         Me.TxtNgay_Gx.Size = New System.Drawing.Size(155, 22)
         Me.TxtNgay_Gx.TabIndex = 7137
-        Me.TxtNgay_Gx.Value = "21/10/2025 09:13"
+        Me.TxtNgay_Gx.Value = "01/10/2026 14:44"
         Me.TxtNgay_Gx.Visible = False
         '
         'CbbVRC
@@ -3898,11 +3900,41 @@ Partial Class HDK
         Me.CmdImport_Mau.Text = "Import lệnh"
         Me.CmdImport_Mau.UseVisualStyleBackColor = True
         '
+        'ChkIs_Thieu_HoSo
+        '
+        Me.ChkIs_Thieu_HoSo.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.ChkIs_Thieu_HoSo.AutoSize = True
+        Me.ChkIs_Thieu_HoSo.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ChkIs_Thieu_HoSo.ForeColor = System.Drawing.Color.Navy
+        Me.ChkIs_Thieu_HoSo.Location = New System.Drawing.Point(515, 645)
+        Me.ChkIs_Thieu_HoSo.Name = "ChkIs_Thieu_HoSo"
+        Me.ChkIs_Thieu_HoSo.Size = New System.Drawing.Size(140, 17)
+        Me.ChkIs_Thieu_HoSo.TabIndex = 100012
+        Me.ChkIs_Thieu_HoSo.TabStop = False
+        Me.ChkIs_Thieu_HoSo.Tag = "Parts order"
+        Me.ChkIs_Thieu_HoSo.Text = "PT/chưa hoàn thiện HS"
+        Me.ChkIs_Thieu_HoSo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.ChkIs_Thieu_HoSo.UseVisualStyleBackColor = True
+        '
+        'TxtGhi_Chu_HoSo
+        '
+        Me.TxtGhi_Chu_HoSo.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.TxtGhi_Chu_HoSo.BackColor = System.Drawing.Color.White
+        Me.TxtGhi_Chu_HoSo.ForeColor = System.Drawing.Color.Navy
+        Me.TxtGhi_Chu_HoSo.Location = New System.Drawing.Point(657, 645)
+        Me.TxtGhi_Chu_HoSo.Name = "TxtGhi_Chu_HoSo"
+        Me.TxtGhi_Chu_HoSo.Size = New System.Drawing.Size(147, 22)
+        Me.TxtGhi_Chu_HoSo.TabIndex = 100013
+        Me.TxtGhi_Chu_HoSo.Tag = ""
+        '
         'HDK
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 14.0!)
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(1353, 742)
+        Me.Controls.Add(Me.TxtGhi_Chu_HoSo)
+        Me.Controls.Add(Me.ChkIs_Thieu_HoSo)
         Me.Controls.Add(Me.CmdImport_Mau)
         Me.Controls.Add(Me.TxtSo_May2)
         Me.Controls.Add(Me.Label40)
@@ -4304,22 +4336,6 @@ Partial Class HDK
         Me.Controls.SetChildIndex(Me.Label47, 0)
         Me.Controls.SetChildIndex(Me.ChkWH, 0)
         Me.Controls.SetChildIndex(Me.ChkNB, 0)
-        Me.Controls.SetChildIndex(Me.TxtUser_id, 0)
-        Me.Controls.SetChildIndex(Me.CmdPhan_Bo, 0)
-        Me.Controls.SetChildIndex(Me.CmdNew, 0)
-        Me.Controls.SetChildIndex(Me.CmdSave, 0)
-        Me.Controls.SetChildIndex(Me.CmdPrint, 0)
-        Me.Controls.SetChildIndex(Me.CmdEdit, 0)
-        Me.Controls.SetChildIndex(Me.CmdCancel, 0)
-        Me.Controls.SetChildIndex(Me.CmdDelete, 0)
-        Me.Controls.SetChildIndex(Me.CmdCopy, 0)
-        Me.Controls.SetChildIndex(Me.CmdSearch, 0)
-        Me.Controls.SetChildIndex(Me.CbbMa_Post, 0)
-        Me.Controls.SetChildIndex(Me.CmdImport, 0)
-        Me.Controls.SetChildIndex(Me.CmdSms, 0)
-        Me.Controls.SetChildIndex(Me.LabMa_Post, 0)
-        Me.Controls.SetChildIndex(Me.CmdView, 0)
-        Me.Controls.SetChildIndex(Me.CmdExit, 0)
         Me.Controls.SetChildIndex(Me.ChkIs_NonFir, 0)
         Me.Controls.SetChildIndex(Me.ChkEM60, 0)
         Me.Controls.SetChildIndex(Me.Chkfirst_visit, 0)
@@ -4353,6 +4369,24 @@ Partial Class HDK
         Me.Controls.SetChildIndex(Me.Label40, 0)
         Me.Controls.SetChildIndex(Me.TxtSo_May2, 0)
         Me.Controls.SetChildIndex(Me.CmdImport_Mau, 0)
+        Me.Controls.SetChildIndex(Me.ChkIs_Thieu_HoSo, 0)
+        Me.Controls.SetChildIndex(Me.TxtGhi_Chu_HoSo, 0)
+        Me.Controls.SetChildIndex(Me.TxtUser_id, 0)
+        Me.Controls.SetChildIndex(Me.CmdPhan_Bo, 0)
+        Me.Controls.SetChildIndex(Me.CmdNew, 0)
+        Me.Controls.SetChildIndex(Me.CmdSave, 0)
+        Me.Controls.SetChildIndex(Me.CmdPrint, 0)
+        Me.Controls.SetChildIndex(Me.CmdEdit, 0)
+        Me.Controls.SetChildIndex(Me.CmdCancel, 0)
+        Me.Controls.SetChildIndex(Me.CmdDelete, 0)
+        Me.Controls.SetChildIndex(Me.CmdCopy, 0)
+        Me.Controls.SetChildIndex(Me.CmdSearch, 0)
+        Me.Controls.SetChildIndex(Me.CbbMa_Post, 0)
+        Me.Controls.SetChildIndex(Me.CmdImport, 0)
+        Me.Controls.SetChildIndex(Me.CmdSms, 0)
+        Me.Controls.SetChildIndex(Me.LabMa_Post, 0)
+        Me.Controls.SetChildIndex(Me.CmdView, 0)
+        Me.Controls.SetChildIndex(Me.CmdExit, 0)
         CType(Me.PopupMenuMaster, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DetailVt, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DetailGRVVt, System.ComponentModel.ISupportInitialize).EndInit()
@@ -4619,4 +4653,6 @@ Partial Class HDK
     Friend WithEvents TxtSo_May2 As System.Windows.Forms.TextBox
     Friend WithEvents Label40 As System.Windows.Forms.Label
     Friend WithEvents CmdImport_Mau As Button
+    Friend WithEvents ChkIs_Thieu_HoSo As CheckBox
+    Friend WithEvents TxtGhi_Chu_HoSo As TextBox
 End Class
