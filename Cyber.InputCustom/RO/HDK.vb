@@ -1240,6 +1240,8 @@
             TxtMa_BH.Text = ""
             Txtten_BH.Text = ""
         End If
+        V_PT_HH_BH_MG()
+        V_PT_HH_BH(New System.Object, New System.EventArgs)
     End Sub
 
 #End Region
@@ -1512,10 +1514,32 @@ _KT:
         TxtMoi_Gioi.Double = CyberSupport.V_Round(TxtT_C.Double * TxtPT_Moi_Gioi.Double / 110, 0)
 
     End Sub
+    Private Sub V_PT_HH_BH_MG()
+        If Not (M_Mode = "M" Or M_Mode = "S") Then Exit Sub
+        Dim _Dt As Date = TxtNgay_Ct.Value
+        Dim _ncount As Integer = 0
+        Dim DsKM As DataSet = CyberSmlib.SQLExcuteStoreProcedure(AppConn, "CP_ROHHBH_HDK", M_Mode.Trim & "#" & TxtMa_Kx.Text & "#" & TxtMa_BH.Text & "#" & TxtT_I.Double & "#" & _Dt.ToString("yyyyMMdd") & "#" & M_Stt_Rec & "#" & M_Ma_CT & "#" & M_Ma_Dvcs & "#" & M_User_Name)
+
+        _ncount = DsKM.Tables.Count
+
+        If _ncount <= 0 Then
+            DsKM.Dispose()
+            Exit Sub
+        End If
+
+        If DsKM.Tables(0).Rows.Count <= 0 Then
+            DsKM.Dispose()
+            Exit Sub
+        End If
+
+        If DsKM.Tables(0).Columns.Contains("PT_HH_BH") And TxtMa_BH.Text <> "" Then TxtPT_HH_BH.Double = DsKM.Tables(0).Rows(0).Item("PT_HH_BH")
+        DsKM.Dispose()
+    End Sub
     Private Sub V_PT_HH_BH(ByVal sender As System.Object, ByVal e As System.EventArgs)
         If Not (M_Mode = "M" Or M_Mode = "S") Then Exit Sub
-        If TxtPT_HH_BH.Double = 0 Then Return
-        TxtHH_BH.Double = CyberSupport.V_Round(TxtT_I.Double * TxtPT_HH_BH.Double / 110, 0)
+        'If TxtPT_HH_BH.Double = 0 Then Return
+
+        UpdateList()
     End Sub
     Private Sub V_PT_Dat_Coc(ByVal sender As System.Object, ByVal e As System.EventArgs)
         If Not (M_Mode = "M" Or M_Mode = "S") Then Exit Sub
@@ -2532,12 +2556,22 @@ _KT:
         Dim nT_N As Decimal = 0
         Dim nT_C As Decimal = 0
 
+        Dim nT_I_TrcV As Decimal = 0
+
         For i = 0 To Dt_DetailTmp.Rows.Count - 1
             If Dt_DetailTmp.Rows(i).RowState = DataRowState.Deleted Then
                 Continue For
             End If
 
+            If Dt_DetailTmp.Rows(i).Item("Ma_TT").ToString.Trim.ToUpper = "I" Then
+                nT_I_TrcV = nT_I_TrcV + Dt_DetailTmp.Rows(i).Item("Tien2") - Dt_DetailTmp.Rows(i).Item("CK_I") + Dt_DetailTmp.Rows(i).Item("Dc_I")
 
+                Dt_DetailTmp.Rows(i).Item("PT_HH_BH_I") = TxtPT_HH_BH.Double
+                Dt_DetailTmp.Rows(i).Item("HH_BH_I") = (Dt_DetailTmp.Rows(i).Item("Tien2") - Dt_DetailTmp.Rows(i).Item("CK_I") + Dt_DetailTmp.Rows(i).Item("Dc_I")) * TxtPT_HH_BH.Double / 100
+            Else
+                Dt_DetailTmp.Rows(i).Item("PT_HH_BH_I") = 0
+                Dt_DetailTmp.Rows(i).Item("HH_BH_I") = 0
+            End If
 
             If Dt_DetailTmp.Rows(i).Item("Ma_TT").ToString.Trim.ToUpper = "I" Then
                 nT_I = nT_I + Dt_DetailTmp.Rows(i).Item("Tien2") - Dt_DetailTmp.Rows(i).Item("CK_I") + Dt_DetailTmp.Rows(i).Item("Thue") + Dt_DetailTmp.Rows(i).Item("Dc_I")
@@ -2562,6 +2596,15 @@ _KT:
         For i = 0 To Dt_DetailCvTmp.Rows.Count - 1
             If Dt_DetailCvTmp.Rows(i).RowState = DataRowState.Deleted Then Continue For
 
+            If Dt_DetailCvTmp.Rows(i).Item("Ma_TT").ToString.Trim.ToUpper = "I" Then
+                nT_I_TrcV = nT_I_TrcV + Dt_DetailCvTmp.Rows(i).Item("Tien_CV") - Dt_DetailCvTmp.Rows(i).Item("CK_I") + Dt_DetailCvTmp.Rows(i).Item("Dc_I")
+                Dt_DetailCvTmp.Rows(i).Item("PT_HH_BH_I") = TxtPT_HH_BH.Double
+                Dt_DetailCvTmp.Rows(i).Item("HH_BH_I") = (Dt_DetailCvTmp.Rows(i).Item("Tien_CV") - Dt_DetailCvTmp.Rows(i).Item("CK_I") + Dt_DetailCvTmp.Rows(i).Item("Dc_I")) * TxtPT_HH_BH.Double / 100
+
+            Else
+                Dt_DetailCvTmp.Rows(i).Item("PT_HH_BH_I") = 0
+                Dt_DetailCvTmp.Rows(i).Item("HH_BH_I") = 0
+            End If
 
 
             If Dt_DetailCvTmp.Rows(i).Item("Ma_TT").ToString.Trim.ToUpper = "I" Then
@@ -2609,8 +2652,10 @@ _KT:
         TxtT_TT.Double = TxtT_I.Double + TxtT_W.Double + TxtT_N.Double + TxtT_C.Double
         '------------------------------------------------------------------------------------
         V_PT_Moi_Gioi(New System.Object, New System.EventArgs)
-        V_PT_HH_BH(New System.Object, New System.EventArgs)
         V_PT_Dat_Coc(New System.Object, New System.EventArgs)
+        V_PT_HH_BH_MG()
+
+        TxtHH_BH.Double = CyberSupport.V_Round(nT_I_TrcV * TxtPT_HH_BH.Double / 100, 0)
     End Sub
     Private Sub Tinh_Gia2(ByVal iRow As Integer)
         If Not (M_Mode = "M" Or M_Mode = "S") Then Exit Sub
