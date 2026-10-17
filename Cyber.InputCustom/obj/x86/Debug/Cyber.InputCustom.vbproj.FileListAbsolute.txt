@@ -255,3 +255,7 @@ D:\CyberSoft\Win\CyberAppGolden_MinhThanh\CyberEnterPriseR3-main\Cyber.InputCust
 D:\CyberSoft\Win\CyberAppGolden_MinhThanh\CyberEnterPriseR3-main\Cyber.InputCustom.pdb
 D:\CyberSoft\Win\CyberAppGolden_MinhThanh\CyberEnterPriseR3-main\Cyber.InputCustom.xml
 D:\CyberSoft\Win\CyberAppGolden_MinhThanh\CyberEnterPriseR3-main\Sm\Cyber.InputCustom\Cyber.InputCustom\obj\x86\Debug\Cyber.InputCustom.PXF.resources
+D:\CyberSoft\Win\CyberAppGolden_MinhThanh\CyberEnterPriseR3-main\Sm\Cyber.InputCustom\Cyber.InputCustom\obj\x86\Debug\Cyber.InputCustom.PNG.resources
+D:\CyberSoft\Win\CyberAppGolden_MinhThanh\CyberEnterPriseR3-main\Sm\Cyber.InputCustom\Cyber.InputCustom\obj\x86\Debug\Cyber.InputCustom.PNA.resources
+D:\CyberSoft\Win\CyberAppGolden_MinhThanh\CyberEnterPriseR3-main\Sm\Cyber.InputCustom\Cyber.InputCustom\obj\x86\Debug\Cyber.InputCustom.PND.resources
+D:\CyberSoft\Win\CyberAppGolden_MinhThanh\CyberEnterPriseR3-main\Sm\Cyber.InputCustom\Cyber.InputCustom\obj\x86\Debug\Cyber.InputCustom.PXD.resources

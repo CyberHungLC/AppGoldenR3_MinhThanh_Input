@@ -1302,9 +1302,9 @@ Public Class PNA
         Dim _Ma_Vitri As String = DrReturn.Item("Ma_Vitri")
 
         Dv_DetailTmp.Item(iRow).BeginEdit()
-        Dv_DetailTmp.Item(iRow).Item("Tk_VT") = IIf(Dv_DetailTmp.Item(iRow).Item("Tk_VT").ToString.Trim = "", _TK_VT, Dv_DetailTmp.Item(iRow).Item("Tk_VT").ToString.Trim)
-        Dv_DetailTmp.Item(iRow).Item("Ma_KHo_I") = IIf(Dv_DetailTmp.Item(iRow).Item("Ma_KHo_I").ToString.Trim = "", _Ma_kho, Dv_DetailTmp.Item(iRow).Item("Ma_KHo_I").ToString.Trim)
-        Dv_DetailTmp.Item(iRow).Item("Ma_Vitri") = IIf(Dv_DetailTmp.Item(iRow).Item("Ma_Vitri").ToString.Trim = "", _Ma_Vitri, Dv_DetailTmp.Item(iRow).Item("Ma_Vitri").ToString.Trim)
+        If Dt_DetailTmp.Columns.Contains("Tk_VT") Then Dv_DetailTmp.Item(iRow).Item("Tk_VT") = _TK_VT
+        If Dt_DetailTmp.Columns.Contains("Ma_KHo_I") Then Dv_DetailTmp.Item(iRow).Item("Ma_KHo_I") = _Ma_kho
+        If Dt_DetailTmp.Columns.Contains("Ma_Vitri") Then Dv_DetailTmp.Item(iRow).Item("Ma_Vitri") = _Ma_Vitri
         Dv_DetailTmp.Item(iRow).EndEdit()
         Dv_DetailTmp.Table.AcceptChanges()
         V_SetPricePurChase(iRow)

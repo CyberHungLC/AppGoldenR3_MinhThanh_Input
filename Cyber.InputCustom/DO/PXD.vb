@@ -587,12 +587,10 @@ Public Class PXD
         Dim _ma_Nx_I As String = _Tk_SPDD
 
         Dv_DetailTmp.Item(iRow).BeginEdit()
-        Dv_DetailTmp.Item(iRow).Item("Tk_VT") = IIf(Dv_DetailTmp.Item(iRow).Item("Tk_VT").ToString.Trim = "", _TK_VT, Dv_DetailTmp.Item(iRow).Item("Tk_VT").ToString.Trim)
-        Dv_DetailTmp.Item(iRow).Item("Ma_Nx_I") = IIf(Dv_DetailTmp.Item(iRow).Item("Ma_Nx_I").ToString.Trim = "", _ma_Nx_I, Dv_DetailTmp.Item(iRow).Item("Ma_Nx_I").ToString.Trim)
-
-        If Dv_DetailTmp.Item(iRow).Item("Ma_kho_I").ToString.Trim = "" Then Dv_DetailTmp.Item(iRow).Item("Ma_kho_I") = DrReturn.Item("Ma_Kho").ToString.Trim
-        If Dv_DetailTmp.Item(iRow).Item("Ma_Vitri").ToString.Trim = "" Then Dv_DetailTmp.Item(iRow).Item("Ma_Vitri") = DrReturn.Item("Ma_Vitri").ToString.Trim
-
+        If Dt_DetailTmp.Columns.Contains("Tk_VT") Then Dv_DetailTmp.Item(iRow).Item("Tk_VT") = _TK_VT
+        If Dt_DetailTmp.Columns.Contains("Ma_KHo_I") Then Dv_DetailTmp.Item(iRow).Item("Ma_KHo_I") = DrReturn.Item("Ma_Kho").ToString.Trim
+        If Dt_DetailTmp.Columns.Contains("Ma_Vitri") Then Dv_DetailTmp.Item(iRow).Item("Ma_Vitri") = DrReturn.Item("Ma_Vitri").ToString.Trim
+        If Dt_DetailTmp.Columns.Contains("Ma_Nx_I") Then Dv_DetailTmp.Item(iRow).Item("Ma_Nx_I") = _ma_Nx_I
         Dv_DetailTmp.Item(iRow).EndEdit()
         Dv_DetailTmp.Table.AcceptChanges()
 
